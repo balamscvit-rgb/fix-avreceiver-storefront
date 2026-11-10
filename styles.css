@@ -9,3 +9,73 @@
 .admin-order-card small{color:#64748b;overflow-wrap:anywhere}
 .admin-order-card select{max-width:180px;padding:7px;border:1px solid #cbd5e1;border-radius:7px}
 @media(max-width:600px){.admin-order-card{flex-direction:column}.admin-order-card>div:last-child{width:100%}}
+
+
+/* FIX AVRECEIVER full business-site branding update */
+:root{--navy:#061426;--navy2:#0b2340;--electric:#12bce8;--red:#ed2638;--silver:#dbe7f1}
+body{background:#f3f7fb;color:#10243b}
+.topbar{background:var(--navy);border-bottom:3px solid var(--red)}
+.topbar nav{gap:16px}
+.topbar nav a{white-space:nowrap}
+.brand-mark{color:var(--electric)}
+.hero{background:radial-gradient(ellipse at 78% 45%,#124a70 0%,#0a2948 42%,#061426 100%);padding-top:58px;padding-bottom:58px;min-height:430px}
+.hero h1 span{color:var(--electric)}
+.hero-banner-wrap{width:min(48%,680px);height:auto;margin:0;display:block;position:relative}
+.hero-banner{display:block;width:100%;height:auto;object-fit:contain;border:1px solid #1b9fce;border-radius:14px;box-shadow:0 18px 50px #0008}
+.hero-copy{max-width:520px}
+.about-section,.gallery-section,.reviews-section{background:#fff}
+.about-grid,.service-grid,.gallery-placeholders,.contact-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:26px}
+.about-card,.service-card{background:#fff;border:1px solid #dce6ef;border-radius:14px;padding:24px;box-shadow:0 8px 24px #0b29400a}
+.about-card{border-top:3px solid var(--electric)}
+.about-icon{font-size:27px;color:#079cc9}
+.about-card h3,.service-card h3{margin:12px 0 8px;color:#0b2038}
+.about-card p,.service-card p,.contact-grid p{margin:0;color:#66788c;font-size:14px;line-height:1.75}
+.about-location{margin-top:22px;padding:15px 18px;border-left:4px solid var(--red);background:#f2f7fb;color:#38516a}
+.services-section{background:linear-gradient(135deg,#07182c,#0d3152);color:#fff}
+.services-section h2{color:#fff}
+.services-section .eyebrow{color:#35c9ed}
+.service-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+.service-card{background:#0e2945;border-color:#244865;box-shadow:none}
+.service-card span{font-size:30px;color:#21c4eb}
+.service-card h3{color:#fff}
+.service-card p{color:#bfd0df}
+.services-section .small-note{color:#c4d6e5;margin-top:22px}
+.gallery-placeholder{min-height:180px;border:1px dashed #9db4c8;border-radius:14px;background:linear-gradient(145deg,#f6f9fc,#eaf1f7);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:18px;color:#36516b}
+.gallery-placeholder span{font-size:35px;color:#0aa6d1}
+.gallery-placeholder strong{margin:8px 0 4px}
+.gallery-placeholder small{color:#788da1}
+.youtube-section{background:#08192d}
+.youtube-panel{display:flex;align-items:center;justify-content:space-between;gap:30px;padding:38px;border:1px solid #1b557b;border-radius:18px;background:linear-gradient(115deg,#0b2947,#071629)}
+.youtube-copy{max-width:650px}
+.youtube-copy h2{color:#fff}
+.youtube-copy p{color:#c0d1df;line-height:1.8}
+.btn-youtube{background:#e62132;color:white}
+.youtube-mark{width:150px;height:105px;border-radius:22px;background:#e62132;color:white;display:grid;place-items:center;font-size:52px;box-shadow:0 10px 35px #e6213244}
+.youtube-mark small{font-size:10px;letter-spacing:1px;font-weight:800}
+.review-panel{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:25px;background:#f4f8fc;border:1px solid #dce6ef;border-radius:14px;margin-top:22px}
+.review-panel strong{font-size:18px;color:#0c2945}
+.review-panel p{color:#687c90;margin-bottom:0}
+.contact-section{background:#eaf1f7}
+.contact-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.contact-grid>div{padding:20px;background:#fff;border:1px solid #dce6ef;border-radius:12px}
+.contact-grid strong{color:#0b2945}
+.contact-actions{display:flex;gap:12px;margin-top:22px}
+footer{background:#04101f;border-top:3px solid var(--red)}
+footer a{color:#52ccef}
+@media(max-width:900px){
+ .topbar{height:auto;min-height:76px;align-items:flex-start;padding:16px 20px;gap:15px;flex-direction:column}
+ .topbar nav{width:100%;overflow-x:auto;padding-bottom:4px;gap:18px}
+ .hero{flex-direction:column;align-items:flex-start;gap:28px;padding:48px 24px}
+ .hero-banner-wrap{width:100%;max-width:700px}
+ .about-grid,.service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .gallery-placeholders{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+ .about-grid,.service-grid,.contact-grid{grid-template-columns:1fr}
+ .youtube-panel,.review-panel{align-items:flex-start;flex-direction:column;padding:24px}
+ .youtube-mark{width:110px;height:78px;font-size:38px}
+ .contact-actions{flex-direction:column}
+ .section{padding:48px 20px}
+ .hero h1{font-size:38px}
+ .trust-strip{flex-direction:column;gap:10px;align-items:flex-start;padding:18px 24px}
+}

@@ -83,6 +83,15 @@ function closeCart() { $("#cart-drawer").classList.remove("open"); $("#cart-over
 async function loadSettings() {
   const data = await api("/api/store-settings");
   settings = { ...settings, ...(data.settings || {}) };
+  const contactButton = $("#contact-whatsapp");
+  if (contactButton && settings.whatsapp_number) {
+    const digits = String(settings.whatsapp_number).replace(/\\D/g, "");
+    if (digits) {
+      contactButton.href = `https://wa.me/${digits}?text=${encodeURIComponent("Hello FIX AVRECEIVER, I would like to enquire about your repair services.")}`;
+      contactButton.target = "_blank";
+      contactButton.rel = "noopener";
+    }
+  }
 }
 async function loadProducts() {
   $("#catalog-status").hidden = false; $("#catalog-status").textContent = "Loading parts catalogue…";
