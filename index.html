@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08172b">
+  <title>FIX AVRECEIVER | Parts Store</title>
+  <meta name="description" content="Amplifier and AV receiver spare parts from FIX AVRECEIVER. Order through WhatsApp.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="FIX AVRECEIVER home">
+      <span class="brand-mark">〽</span>
+      <span><strong>FIX <em>AV</em>RECEIVER</strong><small>PRECISION REPAIR. RELIABLE SOUND.</small></span>
+    </a>
+    <nav>
+      <a href="#products">Parts</a>
+      <a href="#how-to-order">How to order</a>
+      <button class="btn btn-outline" id="cart-open">Cart <span id="cart-count">0</span></button>
+      <button class="icon-btn" id="admin-open" title="Admin login" aria-label="Admin login">⚙</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">AMPLIFIER & AV RECEIVER SPARE PARTS</span>
+        <h1>Find the right part.<br><span>Get your sound back.</span></h1>
+        <p>Browse electronic components and service parts. Place your order directly with FIX AVRECEIVER through WhatsApp.</p>
+        <a class="btn btn-primary" href="#products">Browse parts <span>→</span></a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="circuit c1"></div><div class="circuit c2"></div>
+        <div class="chip"><span>IC</span><i></i><i></i><i></i><i></i><b>FIX</b></div>
+        <div class="hero-chip-label">COMPONENT LEVEL<br>REPAIR • PARTS • SERVICE</div>
+      </div>
+    </section>
+
+    <section class="trust-strip">
+      <div><b>✓</b><span>Specialist AV components</span></div>
+      <div><b>✓</b><span>WhatsApp order support</span></div>
+      <div><b>✓</b><span>Shipping confirmed before payment</span></div>
+    </section>
+
+    <section class="catalog section" id="products">
+      <div class="section-heading">
+        <div><span class="eyebrow">SHOP COMPONENTS</span><h2>Parts catalogue</h2><p>Search by part number, model or category.</p></div>
+        <div class="catalog-tools">
+          <input id="search" type="search" placeholder="Search parts or part number…" aria-label="Search parts">
+          <select id="category-filter" aria-label="Filter by category"><option value="">All categories</option></select>
+        </div>
+      </div>
+      <div id="catalog-status" class="notice">Loading parts catalogue…</div>
+      <div id="product-grid" class="product-grid"></div>
+    </section>
+
+    <section class="how section" id="how-to-order">
+      <span class="eyebrow">SIMPLE & DIRECT</span><h2>How ordering works</h2>
+      <div class="steps">
+        <article><b>01</b><h3>Select parts</h3><p>Add the required components to your cart and enter your delivery details.</p></article>
+        <article><b>02</b><h3>Send on WhatsApp</h3><p>Your item list and contact details open as a prepared WhatsApp message.</p></article>
+        <article><b>03</b><h3>Confirm & pay</h3><p>We confirm stock and courier charges. Pay by UPI after confirmation.</p></article>
+      </div>
+      <p class="small-note">Please wait for FIX AVRECEIVER to confirm availability, final shipping charges and payment instructions before making payment.</p>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand">FIX <em>AV</em>RECEIVER</div><p>Amplifier & AV Receiver Service Centre · Spare Parts</p><small>© <span id="year"></span> FIX AVRECEIVER. All rights reserved.</small></footer>
+
+  <div class="overlay" id="cart-overlay"></div>
+  <aside class="drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="drawer-head"><div><span class="eyebrow">YOUR SELECTION</span><h2>Shopping cart</h2></div><button class="icon-btn" id="cart-close" aria-label="Close cart">✕</button></div>
+    <div id="cart-lines" class="cart-lines"><p class="muted">Your cart is empty.</p></div>
+    <div class="cart-total"><span>Subtotal</span><strong id="cart-subtotal">₹0.00</strong></div>
+    <p class="small-note">Courier charges are calculated and confirmed separately.</p>
+    <button class="btn btn-primary btn-block" id="checkout-open">Continue to order</button>
+  </aside>
+
+  <div class="modal-backdrop" id="checkout-modal">
+    <section class="modal checkout-modal">
+      <div class="modal-head"><div><span class="eyebrow">ORDER DETAILS</span><h2>Delivery information</h2></div><button class="icon-btn" data-close="checkout-modal">✕</button></div>
+      <form id="checkout-form">
+        <div class="form-grid">
+          <label>Customer name<input name="name" required maxlength="100" autocomplete="name"></label>
+          <label>WhatsApp / mobile number<input name="phone" required maxlength="20" inputmode="tel" autocomplete="tel"></label>
+          <label class="full">Delivery address<textarea name="address" required rows="3" maxlength="500" autocomplete="street-address"></textarea></label>
+          <label>City<input name="city" required maxlength="80" autocomplete="address-level2"></label>
+          <label>PIN code<input name="pincode" required maxlength="12" inputmode="numeric" autocomplete="postal-code"></label>
+          <label class="full">Notes (optional)<textarea name="notes" rows="2" maxlength="500" placeholder="Part number confirmation, courier preference, etc."></textarea></label>
+        </div>
+        <div class="checkout-summary"><span>Items subtotal</span><strong id="checkout-total">₹0.00</strong><small>Shipping to be confirmed on WhatsApp.</small></div>
+        <button class="btn btn-primary btn-block" type="submit">Send order via WhatsApp <span>↗</span></button>
+      </form>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="admin-modal">
+    <section class="modal admin-modal">
+      <div class="modal-head"><div><span class="eyebrow">STORE MANAGEMENT</span><h2>Admin panel</h2></div><button class="icon-btn" data-close="admin-modal">✕</button></div>
+      <div id="admin-login">
+        <p class="muted">Enter the private admin token configured in the FIX AVRECEIVER Parts Store Cloudflare Worker.</p>
+        <form id="admin-login-form" class="stack">
+          <label>Admin access token<input name="token" type="password" required autocomplete="current-password"></label>
+          <button class="btn btn-primary btn-block" type="submit">Sign in</button>
+          <p class="form-message" id="login-message"></p>
+        </form>
+      </div>
+      <div id="admin-dashboard" hidden>
+        <div class="admin-toolbar"><p class="muted" id="admin-user"></p><button class="btn btn-outline btn-small" id="admin-logout">Sign out</button></div>
+        <div class="admin-tabs"><button class="tab active" data-tab="products-admin">Products</button><button class="tab" data-tab="orders-admin">Orders</button><button class="tab" data-tab="store-settings">Store settings</button></div>
+        <section id="products-admin">
+          <div class="admin-section-title"><h3>Manage products</h3><button class="btn btn-primary btn-small" id="new-product">+ Add product</button></div>
+          <div id="admin-product-list" class="admin-product-list"></div>
+          <form id="product-form" class="admin-form" hidden>
+            <input type="hidden" name="id">
+            <h3 id="product-form-title">Add product</h3>
+            <div class="form-grid">
+              <label>Product name<input name="name" required maxlength="140"></label>
+              <label>Part number / SKU<input name="sku" maxlength="80"></label>
+              <label>Category<input name="category" required maxlength="80" placeholder="Amplifier IC, HDMI, Power supply…"></label>
+              <label>Price (INR)<input name="price" type="number" min="0" step="0.01" required></label>
+              <label>Stock quantity<input name="stock" type="number" min="0" step="1" required value="0"></label>
+              <label class="full">Product image URL<input name="image_url" type="url" maxlength="1000" placeholder="https://…"></label>
+              <label class="full">Description<textarea name="description" rows="3" maxlength="1000"></textarea></label>
+              <label class="check-label"><input name="featured" type="checkbox"> Featured product</label>
+              <label class="check-label"><input name="active" type="checkbox" checked> Show this product in the public catalogue</label>
+            </div>
+            <div class="form-actions"><button type="button" class="btn btn-outline btn-small" id="cancel-product">Cancel</button><button type="submit" class="btn btn-primary btn-small">Save product</button></div>
+            <p class="form-message" id="product-message"></p>
+          </form>
+        </section>
+        <section id="orders-admin" hidden>
+          <div class="admin-section-title"><h3>Customer orders</h3><button class="btn btn-outline btn-small" id="refresh-orders" type="button">Refresh</button></div>
+          <div id="admin-order-list" class="admin-product-list"><p class="muted">Loading orders…</p></div>
+        </section>
+        <section id="store-settings" hidden>
+          <h3>Store contact & payment settings</h3>
+          <form id="settings-form" class="stack">
+            <label>Business name<input name="business_name" value="FIX AVRECEIVER" required></label>
+            <label>WhatsApp number (country code + number, digits only)<input name="whatsapp_number" placeholder="91XXXXXXXXXX" required></label>
+            <label>UPI ID<input name="upi_id" placeholder="yourname@bank" required></label>
+            <button class="btn btn-primary" type="submit">Save settings</button>
+            <p class="form-message" id="settings-message"></p>
+          </form>
+          <p class="small-note">Never enter a UPI PIN or bank password here. Customers pay only after you confirm stock and courier charges.</p>
+        </section>
+      </div>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
